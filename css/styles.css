@@ -1,0 +1,347 @@
+/* Enhanced CSS Custom Properties */
+:root {
+    /* Original Growi Colors - Exact Match */
+    --color-primary: #FABA2C;
+    --color-primary-alt: #FFBC25;
+    --color-dark: #181818;
+    --color-dark-alt: #232323;
+    --color-light: #FFFFFF;
+    --color-gray: #EFEFEF;
+    --color-gray-light: #F4F4F4;
+    --color-cream: #FFF5CF;
+    
+    /* Typography - Exact Match */
+    --font-primary: 'Dallas PS Sans', Arial, sans-serif;
+    --font-secondary: 'Onest', Arial, sans-serif;
+    
+    /* Layout - Pixel Perfect */
+    --container-max-width: 1240px;
+    --section-padding: 128px;
+    --section-padding-mobile: 64px;
+    
+    /* Transitions - Enhanced */
+    --transition-smooth: all 0.3s cubic-bezier(0.27, 0, 0.51, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Border Radius - Exact Match */
+    --radius-small: 10px;
+    --radius-medium: 20px;
+    --radius-large: 32px;
+    --radius-xl: 84px;
+    --radius-pill: 100px;
+    
+    /* Shadows - Enhanced */
+    --shadow-soft: 0 4px 30px 8px rgba(0, 0, 0, 0.15);
+    --shadow-strong: 0 4px 50px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Enhanced Hero Section - Pixel Perfect */
+.hero-section {
+    min-height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 0;
+}
+
+.hero-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 0;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 569px;
+    display: flex;
+    align-items: center;
+    padding: 128px 0;
+}
+
+.hero-text {
+    width: 100%;
+}
+
+.hero-headline {
+    font-family: var(--font-primary);
+    font-size: clamp(44px, 5vw, 68px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-light);
+    margin-bottom: 24px;
+}
+
+.hero-line-1,
+.hero-line-2 {
+    display: block;
+}
+
+.highlight {
+    color: var(--color-dark);
+}
+
+.hero-description {
+    font-family: var(--font-secondary);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-light);
+    margin-bottom: 48px;
+    max-width: 363px;
+    line-height: 1.6;
+}
+
+.hero-features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.6s ease-out;
+}
+
+.feature-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.feature-item:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.feature-item:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.feature-icon {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+}
+
+.feature-text {
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-light);
+}
+
+/* Enhanced Hero CTA - Exact Match */
+.hero-cta {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-dark);
+    border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+    padding: 81px 96px 81px 32px;
+    min-height: 100vh;
+}
+
+.hero-cta-content {
+    max-width: 452px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+}
+
+.hero-cta-title {
+    font-family: var(--font-primary);
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--color-light);
+    margin-bottom: 16px;
+}
+
+.hero-cta-subtitle {
+    font-family: var(--font-secondary);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-gray);
+    margin-bottom: 32px;
+}
+
+.qr-code {
+    width: 150px;
+    height: 150px;
+    border-radius: var(--radius-medium);
+}
+
+.qr-text {
+    font-family: var(--font-secondary);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-gray);
+    margin-top: 12px;
+}
+
+/* Enhanced Service Logos */
+.service-logos {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.logos-subtitle {
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-gray);
+    margin-bottom: 32px;
+}
+
+.logos-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.service-logo {
+    height: 40px;
+    width: auto;
+    opacity: 0.7;
+    transition: var(--transition-smooth);
+    filter: grayscale(1);
+}
+
+.service-logo:hover {
+    opacity: 1;
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+/* Enhanced Testimonials - Stars Fix */
+.testimonial-rating {
+    display: flex;
+    margin-bottom: 24px;
+}
+
+.stars {
+    display: flex;
+    gap: 4px;
+}
+
+.star {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) saturate(100%) invert(77%) sepia(84%) saturate(2498%) hue-rotate(359deg) brightness(101%) contrast(101%);
+}
+
+/* Enhanced Final CTA - Three Lines */
+.cta-headline {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    color: var(--color-light);
+    line-height: 1.1;
+    text-align: right;
+}
+
+.cta-line-1 {
+    display: block;
+    font-size: 48px;
+    margin-bottom: 8px;
+}
+
+.cta-line-2 {
+    display: block;
+    font-size: 68px;
+    margin-bottom: 8px;
+}
+
+.cta-line-3 {
+    display: block;
+    font-size: 58px;
+}
+
+.cta-line-3 span:first-child {
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    font-size: 51px;
+}
+
+.highlight-yellow {
+    color: var(--color-primary);
+    font-size: 68px;
+}
+
+/* Enhanced Mobile Responsive */
+@media (max-width: 809px) {
+    .hero-container {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .hero-content {
+        padding: 80px 0 40px;
+        text-align: center;
+    }
+    
+    .hero-cta {
+        border-radius: var(--radius-large);
+        padding: 32px 16px;
+        min-height: auto;
+    }
+    
+    .hero-cta-content {
+        gap: 24px;
+    }
+    
+    .hero-cta-title {
+        font-size: 32px;
+    }
+    
+    .qr-code {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .logos-grid {
+        gap: 20px;
+    }
+    
+    .service-logo {
+        height: 28px;
+    }
+    
+    .final-cta-content {
+        text-align: center;
+    }
+    
+    .cta-line-1 {
+        font-size: 36px;
+    }
+    
+    .cta-line-2 {
+        font-size: 48px;
+    }
+    
+    .cta-line-3 {
+        font-size: 42px;
+    }
+    
+    .cta-line-3 span:first-child {
+        font-size: 36px;
+    }
+    
+    .highlight-yellow {
+        font-size: 48px;
+    }
+}
