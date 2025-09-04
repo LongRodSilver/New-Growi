@@ -32,3 +32,15 @@
     font-family: 'Onest', 'Inter', system-ui, -apple-system, sans-serif;
 }
 
+/* Google Fonts - Reliable & Fast */
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Use a similar font for Dallas PS Sans */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700;900&display=swap');
+
+:root {
+    --font-primary: 'Work Sans', Arial, sans-serif;  /* Similar to Dallas PS Sans */
+    --font-secondary: 'Onest', system-ui, sans-serif;
+}
+
+
