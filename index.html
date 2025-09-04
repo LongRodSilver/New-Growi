@@ -11,7 +11,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="navbar-container">
             <div class="navbar-brand">
                 <span style="color: #0a0a0a; font-size: 20px; font-weight: 900;">GROWI</span>
@@ -19,51 +19,65 @@
         </div>
     </nav>
 
-    <!-- Video Hero Section -->
+    <!-- Section 1: Video Hero (Background Only) -->
     <section class="video-hero-section">
-        <video class="hero-video" autoplay muted loop playsinline>
+        <video class="hero-video" autoplay muted loop playsinline preload="auto">
             <source src="img/5DSn24l1cpVnQPbqnsJYGUuw.mp4" type="video/mp4">
         </video>
-        
-        <div class="video-hero-content">
-            <h1 class="video-hero-title">
-                What is<br>
-                <span class="highlight-text">Growi?</span>
-            </h1>
-            <p class="video-hero-subtitle">
-                Our digital excellence thrives on attentive listening, strategic prowess, and steadfast support, elevating brands ahead.
-            </p>
-        </div>
     </section>
 
-    <!-- We Work With Section -->
-    <section class="work-with-section">
-        <div class="work-with-container">
-            <h2 class="work-with-title">We work with...</h2>
-            <div class="work-with-grid">
-                <div class="work-with-item">Motorsport</div>
-                <div class="work-with-item">Content creators</div>
-                <div class="work-with-item">Golf athletes</div>
-                <div class="work-with-item">Soccer teams</div>
-                <div class="work-with-item">Personal brand</div>
-                <div class="work-with-item">Real estate</div>
-                <div class="work-with-item">Models</div>
-                <div class="work-with-item">Influencers</div>
-                <div class="work-with-item">Car rentals</div>
-                <div class="work-with-item">Medical</div>
+    <!-- Section 2: About Us Section (Split Layout) -->
+    <section class="about-section">
+        <div class="about-container">
+            <!-- Left Side - Hero Text -->
+            <div class="about-left">
+                <div class="hero-text-container">
+                    <div class="hero-title-group">
+                        <div class="hero-what-is">What is</div>
+                        <div class="hero-growi">Growi?</div>
+                    </div>
+                    <div class="hero-description">
+                        Our digital excellence thrives on attentive listening, strategic prowess, and steadfast support, elevating brands ahead.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Side - Dark Panel -->
+            <div class="about-right">
+                <div class="work-with-panel">
+                    <h2 class="work-with-title">We work with...</h2>
+                    <div class="categories-grid">
+                        <div class="category-group-1">
+                            <div class="category-item">Motorsport</div>
+                            <div class="category-item">Content creators</div>
+                            <div class="category-item">Golf athletes</div>
+                            <div class="category-item">Soccer teams</div>
+                            <div class="category-item">Personal brand</div>
+                        </div>
+                        <div class="category-group-2">
+                            <div class="category-item">Real estate</div>
+                            <div class="category-item">Models</div>
+                            <div class="category-item">Influencers</div>
+                            <div class="category-item">Car rentals</div>
+                            <div class="category-item">Medical</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Section 3: Services Section -->
     <section class="services-section">
         <div class="services-container">
             <div class="services-header">
-                <h2 class="services-title">
-                    What<br>
-                    we do?
-                </h2>
-                <p class="services-subtitle">Digital Services human experiences</p>
+                <div class="services-title-what">What</div>
+                <div class="services-title-we-do">we do?</div>
+                <div class="services-subtitle">
+                    <span class="digital-services">Digital Services</span>
+                    <span class="human-highlight">human</span>
+                    <span class="experiences">experiences</span>
+                </div>
             </div>
             
             <div class="service-tabs">
@@ -133,39 +147,48 @@
         </div>
     </section>
 
-    <!-- How to Work Section -->
+    <!-- Section 4: How to Work Section -->
     <section class="how-to-work-section">
         <div class="how-to-work-container">
-            <h2 class="how-to-work-title">idea to execution</h2>
+            <h2 class="how-to-work-title">
+                <span class="idea-to">idea to</span>
+                <span class="execution">execution</span>
+            </h2>
             
             <div class="work-steps">
                 <div class="work-step">
-                    <h3 class="step-title">We listen</h3>
+                    <h3 class="step-title">
+                        <span class="we-yellow">We</span> listen
+                    </h3>
                     <p class="step-description">Active listening to the needs and expectations of you and your customers.</p>
                 </div>
                 
                 <div class="work-step">
-                    <h3 class="step-title">We analyze</h3>
+                    <h3 class="step-title">
+                        <span class="we-yellow">We</span> analyze
+                    </h3>
                     <p class="step-description">Analyze the different possible solutions or approaches to address the needs.</p>
                 </div>
                 
                 <div class="work-step">
-                    <h3 class="step-title">We create</h3>
+                    <h3 class="step-title">
+                        <span class="we-yellow">We</span> create
+                    </h3>
                     <p class="step-description">We implement the solution that best aligns with user needs and available resources.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Section 5: Testimonials Section -->
     <section class="testimonials-section">
         <div class="testimonials-container">
             <div class="testimonials-header">
                 <h2 class="testimonials-title">
-                    Great work<br>
-                    For great people
+                    <div class="great-work">Great work</div>
+                    <div class="for-great-people">For great people</div>
                 </h2>
-                <p class="testimonials-subtitle">Since 2021 we work with incredible clients to create meaningful impact and compelling experiences.</p>
+                <p class="testimonials-subtitle">Since 2021 we work with <strong>incredible clients</strong> to create meaningful impact and compelling experiences.</p>
             </div>
             
             <div class="testimonials-carousel" id="testimonials-carousel">
@@ -197,12 +220,36 @@
         </div>
     </section>
 
-    <!-- Final CTA Section -->
-    <section class="final-cta-section">
-        <div class="final-cta-container">
-            <a href="https://wa.me/qr/ASGK4GMJI7E7P1" class="cta-button large" target="_blank">
-                Let's Growi Together
+    <!-- Section 6: Call-to-Action Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <div class="cta-headlines">
+                <div class="interaction-text">interaction</div>
+                <div class="into-business-text">
+                    <span class="into">into</span>
+                    <span class="business">business.</span>
+                </div>
+            </div>
+            
+            <a href="https://wa.me/qr/ASGK4GMJI7E7P1" class="cta-button" target="_blank">
+                LET'S GROWI TOGETHER
             </a>
+        </div>
+    </section>
+
+    <!-- Section 7: Footer -->
+    <section class="footer-section">
+        <div class="footer-container">
+            <div class="footer-copyright">2024 Growi. All rights reserved.</div>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/lets.growi/" target="_blank" class="instagram-link">
+                    <span class="instagram-text">Instagram</span>
+                </a>
+            </div>
+            <div class="footer-legal">
+                <div class="terms-text">Terms</div>
+                <div class="privacy-text">Privacy</div>
+            </div>
         </div>
     </section>
 
@@ -228,7 +275,8 @@
         setInterval(() => {
             const carousel = document.querySelector('.testimonials-carousel');
             if (carousel) {
-                carousel.scrollBy({ left: 470, behavior: 'smooth' });
+                const scrollAmount = 470; // Card width + gap
+                carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
                 
                 if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
                     setTimeout(() => {
