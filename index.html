@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GROWI - Marketing AI</title>
     
-    <!-- Critical CSS inline to ensure basic styling loads -->
     <style>
         :root {
             --color-primary: #FABA2C;
@@ -26,54 +25,96 @@
             line-height: 1.6;
             color: var(--color-dark);
             background-color: var(--color-light);
+            overflow-x: hidden;
         }
         
-        .hero-section {
-            min-height: 100vh;
-            background-color: var(--color-primary);
+        /* Video Hero Section */
+        .video-hero-section {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 64px 32px;
+        }
+        
+        /* Video Background Styling */
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        /* Video Overlay for Better Text Readability */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+        
+        /* Hero Content Over Video */
+        .video-hero-content {
+            position: relative;
+            z-index: 1;
             text-align: center;
+            color: var(--color-light);
+            max-width: 800px;
+            padding: 0 32px;
         }
         
-        .hero-headline {
+        .video-hero-title {
             font-family: var(--font-primary);
-            font-size: clamp(44px, 5vw, 68px);
+            font-size: clamp(48px, 6vw, 80px);
             font-weight: 700;
-            color: var(--color-light);
+            line-height: 1.1;
             margin-bottom: 24px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         
-        .hero-description {
-            font-size: 18px;
-            color: var(--color-light);
-            margin-bottom: 32px;
-            max-width: 500px;
+        .video-hero-subtitle {
+            font-size: clamp(18px, 2vw, 24px);
+            font-weight: 400;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
         }
         
-        .cta-button {
+        .video-cta-button {
             display: inline-block;
-            background-color: var(--color-light);
+            background-color: var(--color-primary);
             color: var(--color-dark);
-            padding: 16px 32px;
+            padding: 20px 40px;
             text-decoration: none;
             border-radius: 50px;
-            font-weight: bold;
-            font-size: 18px;
-            transition: transform 0.3s ease;
+            font-family: var(--font-secondary);
+            font-weight: 700;
+            font-size: 20px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(250, 186, 44, 0.4);
         }
         
-        .cta-button:hover {
-            transform: translateY(-2px);
+        .video-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(250, 186, 44, 0.6);
         }
         
+        /* Services Section */
         .services-section {
             background-color: var(--color-dark);
             color: var(--color-light);
             padding: 80px 32px;
             text-align: center;
+            position: relative;
+            z-index: 2;
         }
         
         .section-title {
@@ -84,7 +125,7 @@
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 32px;
             max-width: 1200px;
             margin: 48px auto 0;
@@ -95,6 +136,11 @@
             border-radius: 16px;
             padding: 32px 24px;
             text-align: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
         }
         
         .service-card h3 {
@@ -128,15 +174,41 @@
             left: 0;
         }
         
+        /* Mobile Responsive */
         @media (max-width: 768px) {
+            .video-hero-title {
+                font-size: 48px;
+            }
+            
+            .video-hero-subtitle {
+                font-size: 18px;
+                margin-bottom: 32px;
+            }
+            
+            .video-cta-button {
+                padding: 16px 32px;
+                font-size: 18px;
+            }
+            
             .services-grid {
                 grid-template-columns: 1fr;
             }
             
-            .hero-section,
+            .video-hero-section,
             .services-section {
                 padding: 48px 16px;
             }
+        }
+        
+        /* Fallback for video loading */
+        .video-fallback {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            z-index: -2;
         }
     </style>
     
@@ -145,12 +217,25 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero-section" id="hero">
-        <div class="hero-container">
-            <h1 class="hero-headline">Boost your social media with AI</h1>
-            <p class="hero-description">Transform your social media presence with our AI-powered tools and expert strategies.</p>
-            <a href="https://wa.me/qr/ASGK4GMJI7E7P1" class="cta-button" target="_blank" rel="noopener">
+    <!-- Video Hero Section -->
+    <section class="video-hero-section" id="hero">
+        <!-- Fallback Background -->
+        <div class="video-fallback"></div>
+        
+        <!-- Video Background -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="img/5DSn24l1cpVnQPbqnsJYGUuw.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Video Overlay -->
+        <div class="video-overlay"></div>
+        
+        <!-- Hero Content -->
+        <div class="video-hero-content">
+            <h1 class="video-hero-title">What is Growi?</h1>
+            <p class="video-hero-subtitle">Our digital excellence thrives on attentive listening, strategic prowess, and steadfast support, elevating brands ahead.</p>
+            <a href="https://wa.me/qr/ASGK4GMJI7E7P1" class="video-cta-button" target="_blank" rel="noopener">
                 Let's Growi Together
             </a>
         </div>
@@ -160,42 +245,36 @@
     <section class="services-section" id="services">
         <div class="services-container">
             <h2 class="section-title">What We Do</h2>
-            <p>Complete social media growth solutions</p>
+            <p>Digital Services human experiences</p>
             
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Social Media Management</h3>
-                    <p>Complete social media strategy and content management for maximum engagement</p>
+                    <h3>Social Media</h3>
+                    <p>Boost AI: Maximize content impact with AI, freeing time for daily life worries</p>
                     <ul class="service-features">
-                        <li>Content creation and scheduling</li>
-                        <li>Community management and engagement</li>
-                        <li>Analytics and performance reporting</li>
-                        <li>Brand voice development</li>
-                        <li>Hashtag strategy optimization</li>
+                        <li>Engagement groups: Connect with like-minded souls effortlessly</li>
+                        <li>Community manager: Expert Instagram interactions management</li>
+                        <li>Trust us with your digital presence</li>
                     </ul>
                 </div>
                 
                 <div class="service-card">
-                    <h3>Content Creation</h3>
-                    <p>High-quality visual and video content that captures your audience's attention</p>
+                    <h3>Website Development</h3>
+                    <p>Landing Page: Perfect for course sale, subscription boosts, early projects needing idea validation</p>
                     <ul class="service-features">
-                        <li>Professional photography and videography</li>
-                        <li>Graphic design and visual branding</li>
-                        <li>Video editing and motion graphics</li>
-                        <li>Instagram Stories and Reels production</li>
-                        <li>Custom templates and brand assets</li>
+                        <li>Corporative web: Analytics measurement, SEO strategy</li>
+                        <li>E-commerce: For validated products and internal web management</li>
+                        <li>Google visibility optimization</li>
                     </ul>
                 </div>
                 
                 <div class="service-card">
-                    <h3>AI Growth Strategy</h3>
-                    <p>Data-driven growth optimization powered by artificial intelligence</p>
+                    <h3>Design & Press</h3>
+                    <p>Graphic design: Craft visually stunning stories, captivating and resonating with every pixel</p>
                     <ul class="service-features">
-                        <li>AI-powered audience targeting</li>
-                        <li>Predictive content optimization</li>
-                        <li>Automated engagement strategies</li>
-                        <li>Performance forecasting and insights</li>
-                        <li>Competitor analysis and benchmarking</li>
+                        <li>Press releases: Compelling stories through media partners</li>
+                        <li>Reels edition: Captivating stories for maximum impact</li>
+                        <li>Brand development: Vision to audience connection</li>
                     </ul>
                 </div>
             </div>
@@ -207,11 +286,10 @@
     <script src="js/main.js"></script>
     
     <script>
-        // Basic initialization
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Growi website loaded successfully!');
+            console.log('Growi video website loaded successfully!');
             
-            // Initialize Lenis if available
+            // Initialize Lenis smooth scrolling if available
             if (typeof Lenis !== 'undefined') {
                 const lenis = new Lenis({
                     duration: 1.2,
@@ -224,6 +302,18 @@
                     requestAnimationFrame(raf);
                 }
                 requestAnimationFrame(raf);
+            }
+            
+            // Video optimization for mobile
+            const video = document.querySelector('.hero-video');
+            if (video) {
+                video.addEventListener('loadeddata', function() {
+                    console.log('Hero video loaded successfully');
+                });
+                
+                video.addEventListener('error', function() {
+                    console.log('Hero video failed to load, showing fallback background');
+                });
             }
         });
     </script>
