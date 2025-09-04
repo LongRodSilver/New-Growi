@@ -4,381 +4,228 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GROWI - Marketing AI</title>
-    <meta name="description" content="Marketing AI">
-    <link rel="icon" href="img/favicon.png">
     
-    <!-- Font Preloads -->
-    <link rel="preload" href="fonts/dallas-ps-sans-bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/onest-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Critical CSS inline to ensure basic styling loads -->
+    <style>
+        :root {
+            --color-primary: #FABA2C;
+            --color-dark: #181818;
+            --color-light: #FFFFFF;
+            --font-primary: 'Dallas PS Sans', Arial, sans-serif;
+            --font-secondary: 'Onest', Arial, sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-secondary);
+            line-height: 1.6;
+            color: var(--color-dark);
+            background-color: var(--color-light);
+        }
+        
+        .hero-section {
+            min-height: 100vh;
+            background-color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 64px 32px;
+            text-align: center;
+        }
+        
+        .hero-headline {
+            font-family: var(--font-primary);
+            font-size: clamp(44px, 5vw, 68px);
+            font-weight: 700;
+            color: var(--color-light);
+            margin-bottom: 24px;
+        }
+        
+        .hero-description {
+            font-size: 18px;
+            color: var(--color-light);
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-light);
+            color: var(--color-dark);
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .services-section {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            padding: 80px 32px;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-family: var(--font-primary);
+            font-size: clamp(32px, 4vw, 48px);
+            margin-bottom: 32px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 48px auto 0;
+        }
+        
+        .service-card {
+            background-color: #2A2A2A;
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: left;
+        }
+        
+        .service-card h3 {
+            font-family: var(--font-primary);
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--color-primary);
+        }
+        
+        .service-card p {
+            color: #B0B0B0;
+            margin-bottom: 16px;
+        }
+        
+        .service-features {
+            list-style: none;
+        }
+        
+        .service-features li {
+            color: #B0B0B0;
+            font-size: 14px;
+            margin-bottom: 8px;
+            padding-left: 16px;
+            position: relative;
+        }
+        
+        .service-features li:before {
+            content: '•';
+            color: var(--color-primary);
+            position: absolute;
+            left: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-section,
+            .services-section {
+                padding: 48px 16px;
+            }
+        }
+    </style>
     
-    <!-- Stylesheets -->
+    <!-- External Stylesheets -->
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Fixed Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="navbar-container">
-            <div class="navbar-brand">
-                <img src="img/logos/growi-logo.svg" alt="Growi" class="logo">
-            </div>
-            <div class="navbar-nav" id="navbar-nav">
-                <a href="#hero" class="nav-link">Home</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#testimonials" class="nav-link">Testimonials</a>
-                <a href="#faq" class="nav-link">FAQ</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        
-        <!-- Hero Section -->
-        <section class="hero-section" id="hero">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1 class="hero-headline">
-                            <span class="hero-line-1">Boost your social media</span>
-                            <span class="hero-line-2">with <span class="highlight">AI</span></span>
-                        </h1>
-                        <p class="hero-description">
-                            Transform your social media presence with our AI-powered tools and expert strategies.
-                        </p>
-                        <div class="hero-features">
-                            <div class="feature-item fade-in">
-                                <img src="img/icons/delivery.svg" alt="Fast Results" class="feature-icon">
-                                <span class="feature-text">Fast Results</span>
-                            </div>
-                            <div class="feature-item fade-in">
-                                <img src="img/icons/thumbs-up.svg" alt="Quality" class="feature-icon">
-                                <span class="feature-text">Premium Quality</span>
-                            </div>
-                            <div class="feature-item fade-in">
-                                <img src="img/icons/star.svg" alt="Guaranteed" class="feature-icon">
-                                <span class="feature-text">Guaranteed Results</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-cta">
-                    <div class="hero-cta-content">
-                        <h2 class="hero-cta-title">Ready to grow?</h2>
-                        <p class="hero-cta-subtitle">Let's start your social media transformation</p>
-                        <a href="https://wa.me/qr/ASGK4GMJI7E7P1" class="cta-button primary" target="_blank" rel="noopener">
-                            Let's Growi Together
-                        </a>
-                        <div class="hero-qr">
-                            <img src="img/qr-code.png" alt="WhatsApp QR Code" class="qr-code">
-                            <p class="qr-text">Scan for instant contact</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section class="services-section" id="services">
-            <div class="services-bg">
-                <img src="img/services-bg.png" alt="Services Background" class="section-bg">
-            </div>
-            <div class="services-container">
-                <div class="services-header">
-                    <h2 class="section-title">What We Do</h2>
-                    <p class="section-subtitle">Complete social media growth solutions</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card slide-in-left">
-                        <div class="service-icon">
-                            <img src="img/icons/megaphone.svg" alt="Social Media Management">
-                        </div>
-                        <h3 class="service-title">Social Media Management</h3>
-                        <p class="service-description">Complete social media strategy and content management for maximum engagement</p>
-                        <ul class="service-features">
-                            <li>Content creation and scheduling</li>
-                            <li>Community management and engagement</li>
-                            <li>Analytics and performance reporting</li>
-                            <li>Brand voice development</li>
-                            <li>Hashtag strategy optimization</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-card scale-in">
-                        <div class="service-icon">
-                            <img src="img/icons/video.svg" alt="Content Creation">
-                        </div>
-                        <h3 class="service-title">Content Creation</h3>
-                        <p class="service-description">High-quality visual and video content that captures your audience's attention</p>
-                        <ul class="service-features">
-                            <li>Professional photography and videography</li>
-                            <li>Graphic design and visual branding</li>
-                            <li>Video editing and motion graphics</li>
-                            <li>Instagram Stories and Reels production</li>
-                            <li>Custom templates and brand assets</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-card slide-in-right">
-                        <div class="service-icon">
-                            <img src="img/icons/globe.svg" alt="AI Growth Strategy">
-                        </div>
-                        <h3 class="service-title">AI Growth Strategy</h3>
-                        <p class="service-description">Data-driven growth optimization powered by artificial intelligence</p>
-                        <ul class="service-features">
-                            <li>AI-powered audience targeting</li>
-                            <li>Predictive content optimization</li>
-                            <li>Automated engagement strategies</li>
-                            <li>Performance forecasting and insights</li>
-                            <li>Competitor analysis and benchmarking</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Service Logos -->
-                <div class="service-logos">
-                    <div class="service-logos-header">
-                        <p class="logos-subtitle">Trusted by leading platforms</p>
-                    </div>
-                    <div class="logos-grid">
-                        <img src="img/logos/facebook.svg" alt="Facebook" class="service-logo">
-                        <img src="img/logos/instagram.svg" alt="Instagram" class="service-logo">
-                        <img src="img/logos/youtube.svg" alt="YouTube" class="service-logo">
-                        <img src="img/logos/tiktok.svg" alt="TikTok" class="service-logo">
-                        <img src="img/logos/linkedin.svg" alt="LinkedIn" class="service-logo">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- How to Work Section -->
-        <section class="how-to-work-section">
-            <div class="how-to-work-bg">
-                <img src="img/how-to-work-bg.png" alt="How We Work Background" class="section-bg">
-            </div>
-            <div class="how-to-work-container">
-                <div class="how-to-work-content">
-                    <h2 class="section-title white">How We Work</h2>
-                    <div class="work-steps">
-                        <div class="work-step fade-in">
-                            <div class="step-number">01</div>
-                            <h3 class="step-title">Consultation</h3>
-                            <p class="step-description">We analyze your current social media presence and understand your business goals</p>
-                        </div>
-                        <div class="work-step fade-in">
-                            <div class="step-number">02</div>
-                            <h3 class="step-title">Strategy</h3>
-                            <p class="step-description">Develop a personalized strategy with AI-powered insights and data-driven recommendations</p>
-                        </div>
-                        <div class="work-step fade-in">
-                            <div class="step-number">03</div>
-                            <h3 class="step-title">Execution</h3>
-                            <p class="step-description">Implementation and continuous optimization with regular performance monitoring</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section class="testimonials-section" id="testimonials">
-            <div class="testimonials-bg">
-                <img src="img/testimonials-bg.png" alt="Testimonials Background" class="section-bg">
-            </div>
-            <div class="testimonials-container">
-                <div class="testimonials-header">
-                    <h2 class="section-title">What Our Clients Say</h2>
-                </div>
-                <div class="testimonials-carousel" id="testimonials-carousel">
-                    <div class="testimonial-card">
-                        <div class="testimonial-rating">
-                            <div class="stars">
-                                <img src="img/icons/star.svg" alt="Star" class="star">
-                                <img src="img/icons/star.svg" alt="Star" class="star">
-                                <img src="img/icons/star.svg" alt="Star" class="star">
-                                <img src="img/icons/star.svg" alt="Star" class="star">
-                                <img src="img/icons/star.svg" alt="Star" class="star">
-                            </div>
-                        </div>
-                        <p class="testimonial-text">
-                            "Growi completely transformed our social media presence. Our engagement increased by 300% in just 3 months!"
-                        </p>
-                        <div class="testimonial-author">
-                            <img src="img/testimonials/sarah-johnson.jpg" alt="Sarah Johnson" class="author-avatar">
-                            <div class="author-info">
-                                <h4 class="author-name">Sarah Johnson</h4>
-                                <p class="author-title">Marketing Director, TechFlow</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
-                        <div class="testimonial-rating">
-                            <div class="stars">
-                                <img src="img/icons/star.svg" alt="Star" class="star">
-                                <img src="img/icons/star.svg" alt="Star" class="star">
-                                <img src="img/icons/star.svg" alt="Star" class="star">
-                                <img src="img/icons/star.svg" alt="Star" class="star">
-                                <img src="img/icons/star.svg" alt="Star" class="star">
-                            </div>
-                        </div>
-                        <p class="testimonial-text">
-                            "The AI-powered approach is incredible. We've never seen such targeted and effective social media growth."
-                        </p>
-                        <div class="testimonial-author">
-                            <img src="img/testimonials/mike-chen.jpg" alt="Mike Chen" class="author-avatar">
-                            <div class="author-info">
-                                <h4 class="author-name">Mike Chen</h4>
-                                <p class="author-title">Startup Founder, InnovateHub</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
-                        <div class="testimonial-rating">
-                            <div class="stars">
-                                <img src="img/icons/star.svg" alt="Star" class="star">
-                                <img src="img/icons/star.svg" alt="Star" class="star">
-                                <img src="img/icons/star.svg" alt="Star" class="star">
-                                <img src="img/icons/star.svg" alt="Star" class="star">
-                                <img src="img/icons/star.svg" alt="Star" class="star">
-                            </div>
-                        </div>
-                        <p class="testimonial-text">
-                            "Professional, reliable, and results-driven. Growi is the best investment we've made for our brand."
-                        </p>
-                        <div class="testimonial-author">
-                            <img src="img/testimonials/emma-wilson.jpg" alt="Emma Wilson" class="author-avatar">
-                            <div class="author-info">
-                                <h4 class="author-name">Emma Wilson</h4>
-                                <p class="author-title">E-commerce Owner, StyleCraft</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq-section" id="faq">
-            <div class="faq-bg">
-                <img src="img/faq-bg.png" alt="FAQ Background" class="section-bg">
-            </div>
-            <div class="faq-container">
-                <div class="faq-content">
-                    <h2 class="section-title">Answers <span class="highlight-dark">you need</span></h2>
-                    <div class="faq-list">
-                        <div class="faq-item" aria-expanded="false">
-                            <button class="faq-question" aria-expanded="false">
-                                <span>Why choose Growi?</span>
-                                <div class="faq-icon">
-                                    <span class="plus-horizontal"></span>
-                                    <span class="plus-vertical"></span>
-                                </div>
-                            </button>
-                            <div class="faq-answer">
-                                <p>We combine AI technology with proven social media strategies to deliver measurable results. Our team has years of experience helping brands grow their online presence with data-driven insights and personalized approaches.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="faq-item" aria-expanded="false">
-                            <button class="faq-question" aria-expanded="false">
-                                <span>Why should I grow?</span>
-                                <div class="faq-icon">
-                                    <span class="plus-horizontal"></span>
-                                    <span class="plus-vertical"></span>
-                                </div>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Social media growth directly impacts your business success. Increased visibility leads to more customers, better brand awareness, and improved engagement with your target audience, ultimately driving sales and revenue growth.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="faq-item" aria-expanded="false">
-                            <button class="faq-question" aria-expanded="false">
-                                <span>What kind of guarantees do I have?</span>
-                                <div class="faq-icon">
-                                    <span class="plus-horizontal"></span>
-                                    <span class="plus-vertical"></span>
-                                </div>
-                            </button>
-                            <div class="faq-answer">
-                                <p>We offer a 100% satisfaction guarantee. If you're not satisfied with our services within the first 30 days, we'll provide a full refund. We also provide monthly performance reports to track your growth progress.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="faq-item" aria-expanded="false">
-                            <button class="faq-question" aria-expanded="false">
-                                <span>How fast will I see results?</span>
-                                <div class="faq-icon">
-                                    <span class="plus-horizontal"></span>
-                                    <span class="plus-vertical"></span>
-                                </div>
-                            </button>
-                            <div class="faq-answer">
-                                <p>Most of our clients see significant improvements within the first 2-4 weeks. Full results are typically visible within 2-3 months, with continued growth and optimization throughout our partnership.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="faq-cta">
-                    <h3 class="cta-heading">Take your asteroids and grow your vision</h3>
-                    <p class="cta-subtext">You can also contact us directly</p>
-                    <a href="mailto:hello@growiagency.com" class="email-link">hello@growiagency.com</a>
-                    <a href="https://wa.me/qr/ASGK4GMJI7E7P1" class="cta-button primary" target="_blank" rel="noopener">
-                        Let's Growi Together
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final CTA Section -->
-        <section class="final-cta-section" id="contact">
-            <div class="cta-bg">
-                <img src="img/hero-bg.jpg" alt="Final CTA Background" class="section-bg">
-            </div>
-            <div class="final-cta-container">
-                <div class="final-cta-content">
-                    <h2 class="cta-headline">
-                        <span class="cta-line-1">Turn your</span>
-                        <span class="cta-line-2">interaction</span>
-                        <span class="cta-line-3">into <span class="highlight-yellow">business.</span></span>
-                    </h2>
-                    <a href="https://wa.me/qr/ASGK4GMJI7E7P1" class="cta-button primary large" target="_blank" rel="noopener">
-                        Let's Growi Together
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <p class="footer-copyright">© 2024 Growi. All rights reserved.</p>
-            <a href="https://www.instagram.com/lets.growi/" class="footer-social" target="_blank" rel="noopener">
-                <img src="img/logos/instagram.svg" alt="Instagram" class="social-icon">
-                <span>Instagram</span>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-container">
+            <h1 class="hero-headline">Boost your social media with AI</h1>
+            <p class="hero-description">Transform your social media presence with our AI-powered tools and expert strategies.</p>
+            <a href="https://wa.me/qr/ASGK4GMJI7E7P1" class="cta-button" target="_blank" rel="noopener">
+                Let's Growi Together
             </a>
-            <div class="footer-legal">
-                <img src="img/logos/growi-logo.svg" alt="Growi" class="footer-logo">
-                <div class="footer-links">
-                    <span class="footer-link">Terms</span>
-                    <span class="footer-link">Privacy</span>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="services-container">
+            <h2 class="section-title">What We Do</h2>
+            <p>Complete social media growth solutions</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Social Media Management</h3>
+                    <p>Complete social media strategy and content management for maximum engagement</p>
+                    <ul class="service-features">
+                        <li>Content creation and scheduling</li>
+                        <li>Community management and engagement</li>
+                        <li>Analytics and performance reporting</li>
+                        <li>Brand voice development</li>
+                        <li>Hashtag strategy optimization</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Content Creation</h3>
+                    <p>High-quality visual and video content that captures your audience's attention</p>
+                    <ul class="service-features">
+                        <li>Professional photography and videography</li>
+                        <li>Graphic design and visual branding</li>
+                        <li>Video editing and motion graphics</li>
+                        <li>Instagram Stories and Reels production</li>
+                        <li>Custom templates and brand assets</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>AI Growth Strategy</h3>
+                    <p>Data-driven growth optimization powered by artificial intelligence</p>
+                    <ul class="service-features">
+                        <li>AI-powered audience targeting</li>
+                        <li>Predictive content optimization</li>
+                        <li>Automated engagement strategies</li>
+                        <li>Performance forecasting and insights</li>
+                        <li>Competitor analysis and benchmarking</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </footer>
+    </section>
 
     <!-- Scripts -->
     <script src="js/lenis.min.js"></script>
-    <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
+    
+    <script>
+        // Basic initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Growi website loaded successfully!');
+            
+            // Initialize Lenis if available
+            if (typeof Lenis !== 'undefined') {
+                const lenis = new Lenis({
+                    duration: 1.2,
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                    smooth: true
+                });
+                
+                function raf(time) {
+                    lenis.raf(time);
+                    requestAnimationFrame(raf);
+                }
+                requestAnimationFrame(raf);
+            }
+        });
+    </script>
 </body>
 </html>
