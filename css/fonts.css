@@ -1,46 +1,82 @@
-/* Font Definitions */
+/* Onest Font Family - All Weights */
 @font-face {
-    font-family: 'Dallas PS Sans';
-    src: url('../fonts/dallas-ps-sans-regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Dallas PS Sans';
-    src: url('../fonts/dallas-ps-sans-bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Onest';
+  src: url('../fonts/Onest-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Onest';
-    src: url('../fonts/onest-variable.woff2') format('woff2-variations');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Onest';
+  src: url('../fonts/Onest-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* Fallback fonts */
-.font-primary {
-    font-family: 'Dallas PS Sans', 'Arial Black', Arial, sans-serif;
+@font-face {
+  font-family: 'Onest';
+  src: url('../fonts/Onest-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
 }
 
-.font-secondary {
-    font-family: 'Onest', 'Inter', system-ui, -apple-system, sans-serif;
+@font-face {
+  font-family: 'Onest';
+  src: url('../fonts/Onest-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* Google Fonts - Reliable & Fast */
-@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face {
+  font-family: 'Onest';
+  src: url('../fonts/Onest-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 
-/* Use a similar font for Dallas PS Sans */
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700;900&display=swap');
+@font-face {
+  font-family: 'Onest';
+  src: url('../fonts/Onest-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: 'Onest';
+  src: url('../fonts/Onest-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Onest';
+  src: url('../fonts/Onest-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Onest';
+  src: url('../fonts/Onest-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font Variable Definitions */
 :root {
-    --font-primary: 'Work Sans', Arial, sans-serif;  /* Similar to Dallas PS Sans */
-    --font-secondary: 'Onest', system-ui, sans-serif;
+    --font-secondary: 'Onest', system-ui, -apple-system, sans-serif;
 }
 
-
+/* Fallback font classes */
+.font-secondary {
+    font-family: var(--font-secondary);
+}
