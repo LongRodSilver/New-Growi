@@ -1,4 +1,45 @@
-/* Onest Font Family - All Weights */
+/* Work Sans Font Family - Primary Font (Replaces Dallas PS Sans) */
+@font-face {
+  font-family: 'Work Sans';
+  src: url('../fonts/WorkSans-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url('../fonts/WorkSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url('../fonts/WorkSans-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url('../fonts/WorkSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url('../fonts/WorkSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Onest Font Family - Secondary Font (Already Added) */
 @font-face {
   font-family: 'Onest';
   src: url('../fonts/Onest-Black.woff2') format('woff2');
@@ -71,12 +112,17 @@
   font-display: swap;
 }
 
-/* Font Variable Definitions */
+/* Font Variable Definitions - Updated */
 :root {
-    --font-secondary: 'Onest', system-ui, -apple-system, sans-serif;
+    --font-primary: 'Work Sans', Arial, sans-serif;      /* Replaces Dallas PS Sans */
+    --font-secondary: 'Onest', system-ui, sans-serif;   /* Body text font */
 }
 
 /* Fallback font classes */
+.font-primary {
+    font-family: var(--font-primary);
+}
+
 .font-secondary {
     font-family: var(--font-secondary);
 }
