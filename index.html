@@ -10,28 +10,12 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Enhanced Navigation with Menu Items -->
+    <!-- Navigation (MINIMAL - Just Logo) -->
     <nav class="navbar" id="navbar">
         <div class="navbar-container">
             <div class="navbar-brand">
                 <span style="color: #0a0a0a; font-size: 20px; font-weight: 900;">GROWI</span>
             </div>
-            
-            <!-- Navigation Menu -->
-            <div class="navbar-nav" id="navbar-nav">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#work" class="nav-link">How We Work</a>
-                <a href="#testimonials" class="nav-link">Testimonials</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            
-            <!-- Mobile Menu Toggle -->
-            <button class="hamburger" id="hamburger">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
         </div>
     </nav>
 
@@ -43,7 +27,7 @@
     </section>
 
     <!-- Section 2: About Us Section (Split Layout) -->
-    <section class="about-section" id="about">
+    <section class="about-section">
         <div class="about-container">
             <!-- Left Side - Hero Text -->
             <div class="about-left">
@@ -61,31 +45,22 @@
             <!-- Right Side - Dark Panel -->
             <div class="about-right">
                 <div class="work-with-panel">
-                    <h2 class="work-with-title">
-                        <span class="we-text">We</span>
-                        <span class="work-highlight">work</span>
-                        <span class="with-text">with...</span>
-                    </h2>
+                    <h2 class="work-with-title">We work with...</h2>
                     <div class="categories-grid">
-                        <div class="category-group">
-                            <div class="category-item">📈 Motorsport</div>
-                            <div class="category-item">🎥 Content creators</div>
-                            <div class="category-item">⛳ Golf athletes</div>
-                            <div class="category-item">⚽ Soccer teams</div>
-                            <div class="category-item">👤 Personal brand</div>
-                            <div class="category-item">🏢 Real estate</div>
-                            <div class="category-item">📸 Models</div>
-                            <div class="category-item">🌟 Influencers</div>
-                            <div class="category-item">🚗 Car rentals</div>
-                            <div class="category-item">🏥 Medical</div>
+                        <div class="category-group-1">
+                            <div class="category-item">Motorsport</div>
+                            <div class="category-item">Content creators</div>
+                            <div class="category-item">Golf athletes</div>
+                            <div class="category-item">Soccer teams</div>
+                            <div class="category-item">Personal brand</div>
                         </div>
-                    </div>
-                    
-                    <!-- Social Media Logos -->
-                    <div class="social-logos">
-                        <div class="social-logo">Facebook</div>
-                        <div class="social-logo">Instagram</div>
-                        <div class="social-logo">YouTube</div>
+                        <div class="category-group-2">
+                            <div class="category-item">Real estate</div>
+                            <div class="category-item">Models</div>
+                            <div class="category-item">Influencers</div>
+                            <div class="category-item">Car rentals</div>
+                            <div class="category-item">Medical</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -93,82 +68,74 @@
     </section>
 
     <!-- Section 3: Services Section -->
-    <section class="services-section" id="services">
+    <section class="services-section">
         <div class="services-container">
             <div class="services-header">
                 <div class="services-title-what">What</div>
-                <div class="services-title-we-do">
-                    <span class="we-text">we</span>
-                    <span class="do-highlight">do</span>
-                    <span class="question">?</span>
-                </div>
-                <div class="services-subtitle">
-                    <span class="digital-services">Digital Services</span>
-                    <span class="human-highlight">human</span>
-                    <span class="experiences">experiences</span>
-                </div>
+                <div class="services-title-we-do">we do?</div>
+                <div class="services-subtitle">Digital Services human experiences</div>
             </div>
             
             <div class="service-tabs">
-                <button class="service-tab active" data-service="social-media">Social Media</button>
-                <button class="service-tab" data-service="website">Website</button>
-                <button class="service-tab" data-service="design">Design</button>
-                <button class="service-tab" data-service="press">Press</button>
+                <button class="service-tab active" onclick="showService('social-media')">Social Media</button>
+                <button class="service-tab" onclick="showService('website')">Website</button>
+                <button class="service-tab" onclick="showService('design')">Design</button>
+                <button class="service-tab" onclick="showService('press')">Press</button>
             </div>
             
             <div class="service-content">
                 <div class="service-panel active" id="social-media">
                     <div class="service-item">
-                        <h4>✅ Boost AI</h4>
+                        <h4>Boost AI</h4>
                         <p>Maximize content impact with AI, freeing time for daily life worries</p>
                     </div>
                     <div class="service-item">
-                        <h4>✅ Engagement groups</h4>
+                        <h4>Engagement groups</h4>
                         <p>Participate in our vibrant online community, which connects you with like-minded souls effortlessly</p>
                     </div>
                     <div class="service-item">
-                        <h4>✅ Community manager</h4>
+                        <h4>Community manager</h4>
                         <p>Trust us with your digital presence, free up time for daily life, assured Instagram interactions are expertly managed</p>
                     </div>
                 </div>
                 
                 <div class="service-panel" id="website">
                     <div class="service-item">
-                        <h4>✅ Landing Page</h4>
+                        <h4>Landing Page</h4>
                         <p>Perfect for course sale, subscription boosts, early projects needing idea validation</p>
                     </div>
                     <div class="service-item">
-                        <h4>✅ Corporative web</h4>
+                        <h4>Corporative web</h4>
                         <p>Recommended for businesses seeking analytics measurement, SEO strategy, and Google visibility</p>
                     </div>
                     <div class="service-item">
-                        <h4>✅ E-commerce</h4>
+                        <h4>E-commerce</h4>
                         <p>Suggested for companies with validated products and internal web management capabilities</p>
                     </div>
                 </div>
                 
                 <div class="service-panel" id="design">
                     <div class="service-item">
-                        <h4>✅ Graphic design</h4>
+                        <h4>Graphic design</h4>
                         <p>We craft visually stunning stories, captivating and resonating with every pixel</p>
                     </div>
                     <div class="service-item">
-                        <h4>✅ Reels edition</h4>
+                        <h4>Reels edition</h4>
                         <p>Turning moments into captivating stories, refining your reels for maximum impact</p>
                     </div>
                     <div class="service-item">
-                        <h4>✅ Brand development</h4>
+                        <h4>Brand development</h4>
                         <p>We bridge your vision to audience, crafting brand identities leaving lasting impact</p>
                     </div>
                 </div>
                 
                 <div class="service-panel" id="press">
                     <div class="service-item">
-                        <h4>✅ Press releases</h4>
+                        <h4>Press releases</h4>
                         <p>We create and publish compelling stories to make your story shine through in our media partners</p>
                     </div>
                     <div class="service-item">
-                        <h4>✅ Wikipedia articles</h4>
+                        <h4>Wikipedia articles</h4>
                         <p>We craft Wikipedia articles that consolidate its place in history, establishing credibility and authority</p>
                     </div>
                 </div>
@@ -177,35 +144,23 @@
     </section>
 
     <!-- Section 4: How to Work Section -->
-    <section class="how-to-work-section" id="work">
+    <section class="how-to-work-section">
         <div class="how-to-work-container">
-            <h2 class="how-to-work-title">
-                <span class="idea-to">idea to</span>
-                <span class="execution">execution</span>
-            </h2>
+            <h2 class="how-to-work-title">idea to execution</h2>
             
             <div class="work-steps">
                 <div class="work-step">
-                    <div class="step-icon">👂</div>
-                    <h3 class="step-title">
-                        <span class="we-yellow">We</span> listen
-                    </h3>
+                    <h3 class="step-title">We listen</h3>
                     <p class="step-description">Active listening to the needs and expectations of you and your customers.</p>
                 </div>
                 
                 <div class="work-step">
-                    <div class="step-icon">🔍</div>
-                    <h3 class="step-title">
-                        <span class="we-yellow">We</span> analyze
-                    </h3>
+                    <h3 class="step-title">We analyze</h3>
                     <p class="step-description">Analyze the different possible solutions or approaches to address the needs.</p>
                 </div>
                 
                 <div class="work-step">
-                    <div class="step-icon">⚡</div>
-                    <h3 class="step-title">
-                        <span class="we-yellow">We</span> create
-                    </h3>
+                    <h3 class="step-title">We create</h3>
                     <p class="step-description">We implement the solution that best aligns with user needs and available resources.</p>
                 </div>
             </div>
@@ -213,58 +168,47 @@
     </section>
 
     <!-- Section 5: Testimonials Section -->
-    <section class="testimonials-section" id="testimonials">
+    <section class="testimonials-section">
         <div class="testimonials-container">
             <div class="testimonials-header">
                 <h2 class="testimonials-title">
-                    <div class="great-work">Great work</div>
-                    <div class="for-great-people">For great people</div>
+                    Great work<br>
+                    For great people
                 </h2>
                 <p class="testimonials-subtitle">Since 2021 we work with <strong>incredible clients</strong> to create meaningful impact and compelling experiences.</p>
             </div>
             
             <div class="testimonials-carousel" id="testimonials-carousel">
                 <div class="testimonial-card">
-                    <div class="quote-icon">💬</div>
                     <p class="testimonial-text">"Working with Growi has been a game-changer! My Instagram went from a few hundred followers to over 10k in just a couple of months. The engagement is off the charts too. If you're serious about growing your social media, these guys are the real deal!"</p>
                     <p class="testimonial-author">Jake W.</p>
                 </div>
                 
                 <div class="testimonial-card">
-                    <div class="quote-icon">💬</div>
                     <p class="testimonial-text">"I had struggled to develop a clear online presence as a small business owner. Growi not only increased that visibility but actually connected me with my customer base in a way I never had before. My sales went through the roof. So worth it!"</p>
                     <p class="testimonial-author">Emily R.</p>
                 </div>
                 
                 <div class="testimonial-card">
-                    <div class="quote-icon">💬</div>
                     <p class="testimonial-text">"I've always had trouble finding the right strategy to make my brand pop on social media. Working with Growi, however, has brought my business to another level. Their personalized approach is what makes them stand out. Recommended!"</p>
                     <p class="testimonial-author">Michael L.</p>
                 </div>
                 
                 <div class="testimonial-card">
-                    <div class="quote-icon">💬</div>
                     <p class="testimonial-text">"I appreciate Growi's dedication to their customers and, truly, they know what they are doing in the area of social media marketing. Finally, my professional profile has the visibility it's been asking for, and my followers are actually engaging with my content now. Kudos to the Growi team!"</p>
                     <p class="testimonial-author">Sarah H.</p>
                 </div>
                 
                 <div class="testimonial-card">
-                    <div class="quote-icon">💬</div>
                     <p class="testimonial-text">"Growi has played a key role in the success of my new venture. They haven't just helped grow my followers but taught me how to manage my social media like a pro. The team is super creative, professional, and always there for you when you need them. Couldn't be happier with the results!"</p>
                     <p class="testimonial-author">Chris M.</p>
                 </div>
-            </div>
-            
-            <!-- Carousel Navigation -->
-            <div class="carousel-nav">
-                <button class="nav-btn prev-btn" onclick="scrollCarousel(-1)">←</button>
-                <button class="nav-btn next-btn" onclick="scrollCarousel(1)">→</button>
             </div>
         </div>
     </section>
 
     <!-- Section 6: Call-to-Action Section -->
-    <section class="cta-section" id="contact">
+    <section class="cta-section">
         <div class="cta-container">
             <div class="cta-headlines">
                 <div class="interaction-text">interaction</div>
@@ -286,7 +230,6 @@
             <div class="footer-copyright">2024 Growi. All rights reserved.</div>
             <div class="footer-social">
                 <a href="https://www.instagram.com/lets.growi/" target="_blank" class="instagram-link">
-                    <span class="instagram-icon">📱</span>
                     <span class="instagram-text">Instagram</span>
                 </a>
             </div>
@@ -302,42 +245,17 @@
     <script src="js/main.js"></script>
     
     <script>
-        // Service Tab Switching
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabs = document.querySelectorAll('.service-tab');
-            const panels = document.querySelectorAll('.service-panel');
-            
-            tabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    const targetService = this.dataset.service;
-                    
-                    // Remove active class from all tabs and panels
-                    tabs.forEach(t => t.classList.remove('active'));
-                    panels.forEach(p => p.classList.remove('active'));
-                    
-                    // Add active class to clicked tab and corresponding panel
-                    this.classList.add('active');
-                    document.getElementById(targetService).classList.add('active');
-                });
+        function showService(serviceId) {
+            document.querySelectorAll('.service-panel').forEach(panel => {
+                panel.classList.remove('active');
             });
             
-            // Mobile Menu Toggle
-            const hamburger = document.getElementById('hamburger');
-            const navbarNav = document.getElementById('navbar-nav');
+            document.querySelectorAll('.service-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
             
-            if (hamburger && navbarNav) {
-                hamburger.addEventListener('click', function() {
-                    hamburger.classList.toggle('active');
-                    navbarNav.classList.toggle('active');
-                });
-            }
-        });
-
-        // Testimonials Carousel
-        function scrollCarousel(direction) {
-            const carousel = document.getElementById('testimonials-carousel');
-            const scrollAmount = 470; // Card width + gap
-            carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+            document.getElementById(serviceId).classList.add('active');
+            event.target.classList.add('active');
         }
 
         // Auto-scroll testimonials
@@ -354,20 +272,6 @@
                 }
             }
         }, 5000);
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
     </script>
 </body>
 </html>
